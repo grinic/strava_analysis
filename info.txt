@@ -1,0 +1,17 @@
+https://towardsdatascience.com/using-the-strava-api-and-pandas-to-explore-your-activity-data-d94901d9bfde
+https://www.youtube.com/watch?v=sgscChKfGyg&t=258s
+
+1. client id:
+104136
+2. client secret:
+d84d42afe9b3f6922d70c659faac1d96875d6dad
+3. Run this and authorize
+https://www.strava.com/oauth/authorize?client_id=104136&redirect_uri=http://localhost&response_type=code&scope=activity:read_all
+4. you get this:
+http://localhost/?state=&code=cc4124cdf727539f50aee0ecd77a664c9da3a028&scope=read,activity:read_all
+The code is everything in between code= and &scope (the code can cange!):
+cc4124cdf727539f50aee0ecd77a664c9da3a028
+5. open postman and make a new POST request with this:
+https://www.strava.com/oauth/token?client_id=104136&client_secret=d84d42afe9b3f6922d70c659faac1d96875d6dad&code=0eb022fc7a465245f57395a68d9aaa237cdb6092&grant_type=authorization_code
+6. copy the refresh token that appears and run in the notebook. BINGO!
+
